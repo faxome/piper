@@ -15,11 +15,10 @@ pipeline {
         stage('Protecode Security Scan') {
             steps {
                 script {
-                    echo "Using server URL: ${protecode.serverUrl}"
                     protecodeExecuteScan(
                         script: this, 
                         protecode: [ 
-                            serverUrl: 'https://qa.bdba.tools.sap',
+                            serverUrl: 'https://qa.bdba.tools.sap/',
                             group: '1640',
                             userTokenCredentialsId: 'AAAVw02ZjkVPRo0Dzs10fTadAXi2jZ9Nb8ZmY7yVPImCZ0PY' // ID учетных данных из Jenkins
                         ],
