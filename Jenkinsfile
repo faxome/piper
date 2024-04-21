@@ -1,3 +1,15 @@
-library('piper-lib-os')
+@Library('piper-lib-os') _
 
-protecodeExecuteScan script: this
+pipeline {
+    agent any
+
+    stages {
+        stage('Protecode Security Scan') {
+            steps {
+                script {
+                    protecodeExecuteScan(script: this)
+                }
+            }
+        }
+    }
+}
